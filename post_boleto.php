@@ -9,16 +9,10 @@ $mp = new MP("Set your access token long live");
 
 
 $payment_preference = array(
-    "token"=> $_REQUEST['token'],
-    "installments"=> (int)$_REQUEST['installmentsOption'],
-    "transaction_amount"=> round((float)$_REQUEST['amount'],2),
+    "transaction_amount"=> 200.00,
     "external_reference"=> "order code 1234xxxx",
-    "binary_mode" => true,
-    "description"=> "Teste payments v1",
-    "payment_method_id"=> $_REQUEST['paymentMethodId'],
-    "statement_descriptor" => "*MEUTESTE",
-    "binary_mode" => true ,
-    
+    "description"=> "Teste boleto v1",
+    "payment_method_id"=> "bolbradesco",
     "payer"=> array(
         "email"=> "test_user_88379317@testuser.com"
     ),
@@ -31,7 +25,7 @@ $payment_preference = array(
                 "picture_url"=> "https=>//google.com.br/images?image.jpg",
                 "category_id"=> "others",
                 "quantity"=> 1,
-                "unit_price"=> round((float)$_REQUEST['amount'],2)
+                "unit_price"=> 200.00
             )
         ),
         "payer"=>  array(
@@ -66,6 +60,9 @@ $response_payment = $mp->post("/v1/payments/", $payment_preference);
 echo "<pre>";
 print_r($response_payment);
 echo "</pre>";
+
+echo "<iframe src='". $response_payment["response"]["transaction_details"]["external_resource_url"] . "' >";
+
 
 
 ?>
