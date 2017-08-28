@@ -13,11 +13,12 @@ $payment_preference = array(
     "installments"=> (int)$_REQUEST['installmentsOption'],
     "transaction_amount"=> round((float)$_REQUEST['amount'],2),
     "external_reference"=> "order code 1234xxxx",
-    "binary_mode" => true,
+    "binary_mode" => false,
     "description"=> "Teste payments v1",
     "payment_method_id"=> $_REQUEST['paymentMethodId'],
     "statement_descriptor" => "*MEUTESTE",
-    "binary_mode" => true ,
+    "binary_mode" => false ,
+    
     
     "payer"=> array(
         "email"=> "test_user_88379317@testuser.com"
