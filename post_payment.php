@@ -12,18 +12,15 @@ $payment_preference = array(
     "token"=> $_REQUEST['token'],
     "installments"=> (int)$_REQUEST['installmentsOption'],
     "transaction_amount"=> round((float)$_REQUEST['amount'],2),
-    "external_reference"=> "order code 1234xxxx",
+    "external_reference"=> "ID-123456", // NUMERO DO PEDIDO DE SEU SITE PARA FUTURA CONCILIAÇÃO
     "binary_mode" => false,
-    "description"=> "Teste payments v1",
+    "description"=> "PEDIDO DO LOJA XPTO ID 12345", // DESCRIÇÃO DO CARRINHO OU ITEM VENDIDO NO
     "payment_method_id"=> $_REQUEST['paymentMethodId'],
-    "statement_descriptor" => "*MEUTESTE",
-    "binary_mode" => false ,
-    
-    
+    "statement_descriptor" => "MEUSITE", // ESTE CAMPO IRÁ NA APARECER NA FATURA DO CARTÃO DO CLIENTE
     "payer"=> array(
         "email"=> "test_user_88379317@testuser.com"
     ),
-    "additional_info"=>  array(
+    "additional_info"=>  array(  // DADOS ESSENCIAIS PARA O ANTI-FRAUDE
         "items"=> array(array(
             
                 "id"=> "1234",
