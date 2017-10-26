@@ -1,0 +1,21 @@
+<?php
+require_once "mercadopago.php";
+
+$mp = new MP("TEST-6517025143495386-100313-70bc16538a560b574f2f254d0db2c4fa__LD_LB__-276511449");
+
+$json_event = file_get_contents('php://input', true);
+$event = json_decode($json_event);
+
+if (!isset($event->type, $event->data) || !ctype_digit($event->data->id)) {
+	http_response_code(400);
+	return;
+}
+
+if ($event->type == 'payment'){
+    $payment_info = $mp->get('/v1/payments/'.$event->data->id);
+
+    if ($payment_info["status"] == 200) {
+        print_r($payment_info["response"]);
+    }
+}
+?>
