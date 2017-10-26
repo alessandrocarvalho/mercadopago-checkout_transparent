@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require_once "lib/mercadopago.php";
 
-$mp = new MP("Set your access token long live");
+$mp = new MP("APP_USR-6517025143495386-100313-58c3888a2e06ee07b39d40558ab1580a__LA_LB__-276511449");
 
 
 $payment_preference = array(
