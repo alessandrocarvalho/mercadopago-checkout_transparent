@@ -66,7 +66,7 @@
   
     
   <script type="text/javascript">
-    Mercadopago.setPublishableKey("APP_USR-40ad9893-5729-4b34-9c7c-45b2e2d5ae78");
+    Mercadopago.setPublishableKey("TEST-b0de4896-dbd3-49ed-b544-cab6c8933cd1");
     
     $(document).ready(function() {
     $("#amount").val(Math.floor(Math.random() * 600) + 10)
